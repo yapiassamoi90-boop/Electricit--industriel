@@ -1,0 +1,21 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, sans-serif; background-color: #0f172a; color: #e2e8f0; line-height: 1.6; padding-bottom: 2rem; }
+header { background: linear-gradient(135deg, #1e293b, #334155); color: #38bdf8; text-align: center; padding: 1.5rem 1rem; border-bottom: 3px solid #0284c7; }
+header h1 { font-size: 1.5rem; margin-bottom: 0.3rem; }
+header p { font-size: 0.9rem; color: #94a3b8; }
+nav { display: flex; overflow-x: auto; background: #1e293b; padding: 0.5rem; gap: 0.5rem; border-bottom: 1px solid #334155; }
+.nav-btn { background: #334155; color: #cbd5e1; border: none; padding: 0.6rem 1rem; border-radius: 6px; white-space: nowrap; cursor: pointer; font-size: 0.9rem; font-weight: 500; }
+.nav-btn.active, .nav-btn:hover { background: #0284c7; color: #fff; }
+main { max-width: 800px; margin: 1rem auto; padding: 0 1rem; }
+section.module-content { background: #1e293b; padding: 1.2rem; border-radius: 10px; border: 1px solid #334155; }
+h2 { color: #38bdf8; font-size: 1.25rem; margin-bottom: 1rem; border-bottom: 2px solid #334155; padding-bottom: 0.5rem; }
+h3 { color: #f8fafc; font-size: 1.1rem; margin-top: 1rem; margin-bottom: 0.5rem; }
+p, ul { margin-bottom: 0.8rem; font-size: 0.95rem; }
+ul { padding-left: 1.2rem; }
+.formule-box { background: #0f172a; border-left: 4px solid #38bdf8; padding: 0.8rem; margin: 0.8rem 0; border-radius: 4px; font-family: monospace; font-size: 1rem; color: #38bdf8; }
+.exemple, .exercice-card, .evaluation-card, .cours-card { background: #273548; padding: 1rem; border-radius: 8px; margin-top: 1rem; border: 1px solid #334155; }
+button { background-color: #0284c7; color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; font-weight: 600; margin-top: 0.5rem; font-size: 0.9rem; }
+button:hover { background-color: #0369a1; }
+.correction { margin-top: 0.8rem; padding: 0.8rem; background-color: #064e3b; border-left: 4px solid #10b981; border-radius: 6px; color: #d1fae5; }
+textarea { width: 100%; height: 80px; background: #0f172a; color: #fff; border: 1px solid #475569; border-radius: 6px; padding: 0.6rem; margin-top: 0.5rem; font-family: inherit; }
+footer { text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.8rem; }
