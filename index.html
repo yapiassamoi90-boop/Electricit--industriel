@@ -10,137 +10,79 @@
     <link rel="apple-touch-icon" href="icon-192.png">
 </head>
 <body>
-
     <header>
         <h1>⚡ Électricité Industrielle</h1>
         <p>Formation 1ère Année - Assistant Hors-Ligne</p>
     </header>
 
     <nav id="module-nav">
-        <button class="nav-btn active" onclick="switchModule(1)">Module 1 : Fondamentaux</button>
-        <button class="nav-btn" onclick="switchModule(2)">Module 2 : Triphasé</button>
-        <button class="nav-btn" onclick="switchModule(3)">Module 3 : Protections</button>
-        <button class="nav-btn" onclick="switchModule(4)">Module 4 : Commandes</button>
+        <button class="nav-btn active" onclick="switchModule(1, event)">Module 1 : Fondamentaux</button>
+        <button class="nav-btn" onclick="switchModule(2, event)">Module 2 : Triphasé</button>
+        <button class="nav-btn" onclick="switchModule(3, event)">Module 3 : Protections</button>
+        <button class="nav-btn" onclick="switchModule(4, event)">Module 4 : Commandes</button>
     </nav>
 
     <main>
         <!-- MODULE 1 -->
-        <section id="module-1" class="module-content active">
+        <section id="module-1" class="module-content">
             <h2>Module 1 : Les Fondamentaux et la Loi d'Ohm</h2>
-            
             <article class="cours-card">
                 <h3>1. Le Cours : Tension, Courant, Résistance</h3>
-                <p>Pour comprendre l'électricité, imagine un circuit d'eau dans une installation industrielle :</p>
                 <ul>
-                    <li><strong>La Tension (U)</strong> en Volts (V) : La pression qui pousse les électrons.</li>
-                    <li><strong>L'Intensité (I)</strong> en Ampères (A) : Le débit d'électrons qui circulent.</li>
-                    <li><strong>La Résistance (R)</strong> en Ohms (Ω) : Le frein ou l'obstacle au passage du courant.</li>
+                    <li><strong>Tension (U)</strong> en Volts (V) : La pression qui pousse les électrons.</li>
+                    <li><strong>Intensité (I)</strong> en Ampères (A) : Le débit d'électrons.</li>
+                    <li><strong>Résistance (R)</strong> en Ohms (Ω) : Le frein au passage.</li>
                 </ul>
                 <div class="formule-box">
-                    <strong>La Loi d'Ohm :</strong> 
-                    <span>U = R × I</span>
-                    <br><em>Dérivées :</em> I = U / R | R = U / I
+                    <strong>Loi d'Ohm :</strong> <span>U = R × I</span><br>
+                    <em>Dérivées :</em> I = U / R | R = U / I
                 </div>
             </article>
-
-            <article class="cours-card">
-                <h3>2. Exemples Pratiques</h3>
-                <div class="exemple">
-                    <strong>Exemple 1 :</strong> Une résistance de chauffage de 50 Ω traversée par 4 A.<br>
-                    <em>Calcul :</em> U = 50 × 4 = <strong>200 V</strong>.
-                </div>
-                <div class="exemple">
-                    <strong>Exemple 2 :</strong> Appareil sous 230 V avec une résistance interne de 46 Ω.<br>
-                    <em>Calcul :</em> I = 230 / 46 = <strong>5 A</strong>.
-                </div>
-            </article>
-
             <article class="exercice-card">
-                <h3>3. Exercice d'Application Guidé</h3>
-                <p><strong>Énoncé :</strong> Un enroulement de moteur présente une résistance de 23 Ω sous une tension de 230 V. Calcule l'intensité du courant.</p>
-                <button onclick="toggleBox('corr-guide-1')">Afficher la correction détaillée</button>
-                <div id="corr-guide-1" class="correction" style="display: none;">
-                    <p><strong>Correction :</strong> I = U / R = 230 / 23 = <strong>10 A</strong>.</p>
-                </div>
-            </article>
-
-            <article class="evaluation-card">
-                <h3>4. À Toi de Jouer (Évaluation)</h3>
-                <p><strong>Exercice :</strong> Sur un tableau de commande, un voyant fonctionne sous 24 V (continu) et est traversé par un courant de 0,02 A (20 mA). Quelle est la résistance interne de ce voyant ?</p>
-                
-                <textarea id="user-ans-1" placeholder="Écris ton raisonnement et ton calcul ici..."></textarea>
-                <button class="btn-action" onclick="checkEvaluation(1)">Vérifier ma réponse</button>
-                
+                <h3>2. À Toi de Jouer</h3>
+                <p>Un voyant 24V est traversé par 0,02 A. Quelle est sa résistance ?</p>
+                <textarea id="user-ans-1" placeholder="Écris ton calcul ici..."></textarea>
+                <button class="btn-action" onclick="checkEvaluation(1)">Vérifier</button>
                 <div id="eval-corr-1" class="correction" style="display: none;">
-                    <p><strong>Correction officielle :</strong></p>
-                    <p>On cherche la résistance R. D'après la loi d'Ohm : <code>R = U / I</code></p>
-                    <p>A.N. : R = 24 / 0,02 = <strong>1200 Ω</strong> (ou 1,2 kΩ).</p>
+                    <p>R = U / I = 24 / 0,02 = <strong>1200 Ω (1,2 kΩ)</strong></p>
                 </div>
             </article>
         </section>
 
         <!-- MODULE 2 -->
         <section id="module-2" class="module-content" style="display: none;">
-            <h2>Module 2 : Le Courant Alternatif et le Triphasé</h2>
+            <h2>Module 2 : Triphasé</h2>
             <article class="cours-card">
-                <h3>1. Le Cours : Monophasé vs Triphasé</h3>
-                <p>En industrie, on utilise le triphasé (3 phases + Neutre + Terre) pour alimenter des moteurs puissants et équilibrer les charges.</p>
-                <ul>
-                    <li>Tension simple (V) entre Phase et Neutre : <strong>230 V</strong>.</li>
-                    <li>Tension composée (U) entre Phase et Phase : <strong>400 V</strong>.</li>
-                </ul>
-                <div class="formule-box">
-                    <strong>Couplages des moteurs :</strong><br>
-                    • Étoile (Y) : tensions faibles / démarrage.<br>
-                    • Triangle (Δ) : tensions élevées / régime nominal.
-                </div>
-            </article>
-            <article class="exercice-card">
-                <h3>Exercice Module 2</h3>
-                <p>Un moteur est couplé en étoile sur un réseau 400V. Si la résistance d'un enroulement est de 40 Ω, quel courant traverse l'enroulement ?</p>
-                <button onclick="toggleBox('corr-m2')">Afficher la correction</button>
-                <div id="corr-m2" class="correction" style="display: none;">
-                    <p>En étoile, la tension aux bornes d'un enroulement est la tension simple V = 230 V.<br>
-                    I = V / R = 230 / 40 = <strong>5,75 A</strong>.</p>
-                </div>
+                <h3>Monophasé vs Triphasé</h3>
+                <p>Tension simple V (Ph-N) = 230V | Tension composée U (Ph-Ph) = 400V</p>
+                <div class="formule-box">Étoile (Y) pour démarrage | Triangle (Δ) pour régime nominal</div>
             </article>
         </section>
 
         <!-- MODULE 3 -->
         <section id="module-3" class="module-content" style="display: none;">
-            <h2>Module 3 : Appareillage de Protection</h2>
+            <h2>Module 3 : Protections</h2>
             <article class="cours-card">
-                <h3>1. Le Cours : Rôles et Différences</h3>
-                <p>L'appareillage protège les biens et les personnes :</p>
-                <ul>
-                    <li><strong>Sectionneur :</strong> Coupe visiblement le circuit hors charge.</li>
-                    <li><strong>Disjoncteur Magnétothermique :</strong> Protège contre les surcharges et courts-circuits.</li>
-                    <li><strong>Disjoncteur Différentiel :</strong> Protège les personnes contre les contacts indirects.</li>
-                </ul>
+                <p>Sectionneur : coupe hors charge. Disjoncteur : surcharges + courts-circuits. Différentiel : protège les personnes.</p>
             </article>
         </section>
 
         <!-- MODULE 4 -->
         <section id="module-4" class="module-content" style="display: none;">
-            <h2>Module 4 : Commande et Puissance de Base</h2>
+            <h2>Module 4 : Commande</h2>
             <article class="cours-card">
-                <h3>1. Le Cours : Contacteur et Relais Thermique</h3>
-                <p>Le contacteur est un interrupteur commandé par une bobine (A1-A2). Le relais thermique protège le moteur contre les surcharges prolongées en coupant le circuit de commande.</p>
+                <p>Contacteur = interrupteur à bobine A1-A2. Relais thermique = protège contre surcharge prolongée.</p>
             </article>
         </section>
     </main>
 
-    <footer>
-        <p>⚡ Conçu pour les Électriciens Industriels | Mode Hors-Ligne Actif</p>
-    </footer>
+    <footer><p>⚡ Conçu pour les Électriciens Industriels | Mode Hors-Ligne Actif</p></footer>
 
     <script src="script.js"></script>
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./sw.js')
-                    .then(reg => console.log('SW enregistré !', reg.scope))
-                    .catch(err => console.log('Erreur SW :', err));
+                navigator.serviceWorker.register('./sw.js');
             });
         }
     </script>
